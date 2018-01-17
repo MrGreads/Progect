@@ -92,6 +92,7 @@ svg:not(:root) {
 }
 figure {
   margin: 1em 40px;
+
 }
 hr {
   height: 0;
@@ -2433,6 +2434,7 @@ table th[class*="col-"] {
   }
   .table-responsive > .table {
     margin-bottom: 0;
+
   }
   .table-responsive > .table > thead > tr > th,
   .table-responsive > .table > tbody > tr > th,
