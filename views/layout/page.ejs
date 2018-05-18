@@ -13,7 +13,15 @@
   <nav class="navbar navbar-inverse">
       <div class="container-fluid">
                     <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
+                    <% if(menu){
+                     menu.forEach(function(item){
+                    %>
+                     <li><a href="/hero/<%= item.nick %>"><%= item.title
+                    %></a></li>
+                    <%
+                    })}
+                    %>
+              <li><a href="/">Home</a></li>
               <li><a href="/Alukard">Alukard</a></li>
               <li><a href="/Seyras">Seyras</a></li>
               <li><a href="/Integra">Integra</a></li>
