@@ -4,10 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/learn');
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var async = require('async');
 var app = express();
 
 // view engine setup
@@ -44,7 +45,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname,
-    'bootstrap-3.3.2-dist')));
+app.use(express.static(path.join(__dirname, 'bootstrap-3.3.2-dist')));
 
 module.exports = app;

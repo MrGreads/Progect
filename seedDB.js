@@ -5,7 +5,7 @@ MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var mydb= db.db("Helsing")
     mydb.dropDatabase()
-    var collection = mydb.collection("Hero")
+    var collection = mydb.collection("hero")
     collection.insertMany(data,function(){
         console.log("Collection creation")
         db.close()

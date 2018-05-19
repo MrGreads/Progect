@@ -14,26 +14,7 @@
 
 </head>
  <body style="background:url(/images/фон.jpg);">
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-        <% if(typeof menu == 'object' && menu){
-         menu.forEach(function(item){
-        %>
-         <li><a href="/hero/<%= item.nick %>"><%=
-        item.title %></a></li>
-        <%
-        })}
-        %>
-            <li><a href="/">Home</a></li>
-            <li><a href="/hero/Alucard">Alucard</a></li>
-            <li><a href="/hero/Seyras">Seyras</a></li>
-            <li><a href="/hero/Integra">Integra</a></li>
-            <li><a href="/hero/Dolnez">Dolnez</a></li>
-        </ul>
-    </div>
-</nav>
+ <% layout('layout/page.ejs') %>
 
 <div class="container">
   <h2> </h2>
