@@ -8,7 +8,7 @@ MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var ourdb = db.db("Helsing")
     var collection = ourdb.collection("Hero")
-    collection.find({}).project({ _id: 1,
+    collection.find({}).project({ _id: 0,
         title: 1, nick: 1 }).toArray(function(err,result){
         if(err) throw err
         menu = result
