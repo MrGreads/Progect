@@ -23,16 +23,16 @@
         <% if(typeof menu == 'object' && menu){
          menu.forEach(function(item){
         %>
-         <li><a href="/hero/<% item.nick %>"><%
+         <li><a href="/hero/<%= item.nick %>"><%=
         item.title %></a></li>
         <%
         })}
         %>
             <li><a href="/">Home</a></li>
-            <li><a href="/Alukard">Alukard</a></li>
-            <li><a href="/Seyras">Seyras</a></li>
-            <li><a href="/Integra">Integra</a></li>
-            <li><a href="/Dolnez">Dolnez</a></li>
+            <li><a href="/hero/Alucard">Alucard</a></li>
+            <li><a href="/hero/Seyras">Seyras</a></li>
+            <li><a href="/hero/Integra">Integra</a></li>
+            <li><a href="/hero/Dolnez">Dolnez</a></li>
         </ul>
     </div>
 </nav>

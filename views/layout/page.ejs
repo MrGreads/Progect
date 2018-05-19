@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= title || "Heroes" %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/bootstrap-3.3.2-dist/css/bootstrap.css' />
     <script src='/bootstrap-3.3.2-dist/js/bootstrap.js'></script>
@@ -14,6 +14,7 @@
       <div class="container-fluid">
                     <ul class="nav navbar-nav">
                     <% if(menu){
+                    console.log(menu)
                      menu.forEach(function(item){
                     %>
                      <li><a href="/hero/<%= item.nick %>"><%= item.title
@@ -21,11 +22,11 @@
                     <%
                     })}
                     %>
-              <li><a href="/">Home</a></li>
-              <li><a href="/Alukard">Alukard</a></li>
-              <li><a href="/Seyras">Seyras</a></li>
-              <li><a href="/Integra">Integra</a></li>
-              <li><a href="/Dolnez">Dolnez</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/hero/Alucard">Alucard</a></li>
+                        <li><a href="/hero/Seyras">Seyras</a></li>
+                        <li><a href="/hero/Integra">Integra</a></li>
+                        <li><a href="/hero/Dolnez">Dolnez</a></li>
           </ul>
       </div>
   </nav>
