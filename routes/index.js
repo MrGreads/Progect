@@ -2,25 +2,26 @@ var express = require('express');
 var router = express.Router();
 var hero = require('../models/hero.js').hero;
 var async = require('async');
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/Helsing";
+/*var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/Helsing";*/
 var menu=[];
-MongoClient.connect(url, function(err, db) {
+/*MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var ourdb = db.db("Helsing")
-    var collection = ourdb.collection("hero")
+    var ourdb = db.db("Helsing");
+    var collection = ourdb.collection("hero");
     collection.find({}).project({ _id: 0,
         title: 1, nick: 1 })
         .toArray(function(err,result){
-        if(err) throw err
-        menu = result
+        if(err) throw err;
+        menu = result;
         db.close()
     })
-});
+});*/
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express',menu:menu });
+    req.session.greeting = "Hi!!!"
+    res.render('index', { title: 'Express',menu:menu });
 });
 router.get('/:nick', function(req, res, next) {
     async.parallel([

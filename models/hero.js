@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var hero = require('../models/hero.js').hero;
-var async = require('async');
 var heroSchema = mongoose.Schema({
     title: String,
     nick: {
@@ -13,7 +12,7 @@ var heroSchema = mongoose.Schema({
     about: String,
     created:{
         type:Date,
-        default: Date.now
+        default: Date.now()
     }
 });
-exports.hero = mongoose.model('hero', heroSchema);
+module.exports.hero = mongoose.model('hero', heroSchema);
